@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="row" id="main-row">
+      <div class="col s1" id="small-side-bar">
+        <a id="begin-button" class="btn-floating btn-small">
+          <i class="material-icons">play_circle_outline</i>
+        </a>
+        <a class="btn-floating btn-small">
+          <i class="material-icons">stop</i>
+        </a>
+        <a class="btn-floating btn-small">
+          <i class="material-icons">add</i>
+        </a>
+        <a class="btn-floating btn-small">
+          <i class="material-icons">add</i>
+        </a>
+      </div>
+      <div class="col s2" id="large-side-bar">
+        <div class="row">
+          <div class="input-field col s6">
+            <input  id="ani_time" type="number" value="1.0" step="0.1" class="validate">
+            <label class="active" for="ani_time">Duration</label>
+          </div>
+        </div>
+        <div class="row">
+          <form class="col s12" action="#">
+            <p class="range-field color-picker">
+              <label for="color1">Color 1l</label>
+              <input type="color" id="color1" class="color-input" min="0" max="100" />
+            </p>
+          </form>
+        </div>
+        <div class="row">
+          <form class="col s12" action="#">
+            <p class="range-field color-picker">
+              <label for="color1">Color 2</label>
+              <input type="color" id="color2" class="color-input" min="0" max="100" />
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="col s9" id="art-space">
+      </div>
+    </div>
+  </body>
+<script src='jquery.keyframes.js'></script>
+<script src="./js.js"></script>
+
+
+</html>
