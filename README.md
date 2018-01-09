@@ -1,3 +1,3 @@
 # css-fun
 
-## Just Having Some Fun. Enjoy.
+Just Having Some Fun. Enjoy.
