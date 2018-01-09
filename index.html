@@ -21,20 +21,17 @@
         <a id="start-ani-button" class="btn-floating btn-small">
           <i class="material-icons">play_circle_outline</i>
         </a>
-        <a class="btn-floating btn-small">
-          <i class="material-icons">stop</i>
-        </a>
-        <a class="btn-floating btn-small">
-          <i class="material-icons">add</i>
+        <a id="pause-button" class="btn-floating btn-small">
+          <i class="material-icons">pause_circle_outline</i>
         </a>
       </div>
       <div class="col s2" id="large-side-bar">
-        <div class="row">
+        <!-- <div class="row">
           <div class="input-field col s6">
             <input  id="ani_time" type="number" value="2.0" step="0.2" class="validate">
             <label class="active" for="ani_time">Duration</label>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <form class="col s12" action="#">
             <p class="range-field color-picker">
@@ -56,7 +53,7 @@
             <form action="#">
               <p class="range-field">
                 <label for='size'>Size</label>
-                <input type="range" id="size" class="keyframe-input" min="0" max="100" />
+                <input type="range" id="size" class="keyframe-input" value="1" min="0" max="100" />
               </p>
             </form>
           </div>
