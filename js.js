@@ -1,3 +1,8 @@
+// Things to do :
+//
+// 1. set the size of the boxes inversely corelation to their amount. (1 boxes takes up the full
+// screen, two boxes take up half each)
+
 $(document).ready(function() {
   // variables
   var delay;
@@ -6,32 +11,33 @@ $(document).ready(function() {
   var color2 = '#84AF9C';
   var size = 0.1;
   var started = false;
-
-
+  var viewport = $(window).width()
+  //Assigning the screen size to var viewport on change.
+$(window).resize(function(){
+  viewport = $(window).width()
+});
 
   // Event listeners-------------------------------------
 
-  // Making the colors blocks and appending to DOM
-  $('#begin-button').on('click', function (e) {
+  // Making first box when add button is click
+  $('#begin-button').on('click', function () {
     if (started == false){
       started = true;
-      var i = 1
-      var interval = setInterval(function () {
-        $('#art-space').append('<div class="color-box" style="animation-delay:' + i +'0ms; animation-duration: 2s;" id="' + i + '"></div>');
-        // $('.color-box').attr('style', 'animation-duration: 2s;')
-        i++;
-        if (i == 136) {
-          clearInterval(interval);
-        }
-      }, 10);
+      makeBoxes(viewport/3)
     }
   });
-  $('#start-ani-button').on('click', function(e) {
+
+  $('#start-ani-button').on('click', function() {
     $('.color-box').addClass('ani');
   });
 
   $('#pause-button').on('click', function() {
     $('.color-box').removeClass('ani');
+  });
+
+  $('#box-amt-input').on('input', function() {
+    console.log('amt slider clicked')
+    makeBoxes($(this).val());
   });
   // Need to fix
   // $('#ani_time').on('change', function() {
@@ -41,9 +47,17 @@ $(document).ready(function() {
   //   $('.color-box').attr('style', function(){return $(this).attr('style') + ani_time})
   // });
 
-  $('.keyframe-input').on('change', keyFrameChanger); 
+  $('.keyframe-input').on('input', keyFrameChanger); 
   
   // End style change listeners----------------------------------
+
+  function makeBoxes(amt) {
+    console.log('inside makeBoxes()')
+    $('#art-space').empty();
+    for(var i = 0; i < amt; i++){
+      $('#art-space').append('<div class="color-box" style="animation-delay:' + i +'ms; animation-duration: 2s; id="' + i + '"></div>');
+    };
+  };
 
   function keyFrameChanger(event) {
     console.log(event)
