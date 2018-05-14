@@ -1,3 +1,3 @@
 # css-fun
 
-Just Having Some Fun. Enjoy.
+Experimenting with css animations. 
